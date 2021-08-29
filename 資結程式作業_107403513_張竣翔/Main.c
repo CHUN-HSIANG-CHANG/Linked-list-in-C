@@ -1,11 +1,10 @@
-/*
-²Õªø: ªô¤hÅv 
-½sÄ¶¾¹ª©¥»: TDM-GCC 4.9.2 64-bit Release
+/* 
+ç·¨è­¯å™¨ç‰ˆæœ¬: TDM-GCC 4.9.2 64-bit Release
 */ 
 
 #include <stdio.h>
 #include <stdlib.h>
-/*©w¸q¸ê®Æµ²ºc*/
+/*å®šç¾©è³‡æ–™çµæ§‹*/
 typedef struct node* node_pointer;
 typedef struct node node;
 typedef struct list list;
@@ -22,7 +21,7 @@ struct list{
     node_pointer head;
 };
 
-/*¨ç¼Æ­ì«¬*/
+/*å‡½æ•¸åŸå‹*/
 void createList(list* list);
 int insertNode(list* list, node_pointer pPre, int dataIn);
 void deleteNode(list* list, node_pointer pPre, node_pointer pLoc, int* dataOut);
@@ -117,26 +116,26 @@ int insertNode(list* list, node_pointer pPre, int dataIn){
 void deleteNode(list* list,node_pointer pPre, node_pointer pLoc,int* dataOut){
 	
 	*dataOut = pLoc->data;
-	if(pPre == NULL)//­n§R°£ªº¬O²Ä¤@­Ó¸`ÂI 
+	if(pPre == NULL)//è¦åˆªé™¤çš„æ˜¯ç¬¬ä¸€å€‹ç¯€é» 
 	{
 		list->head = pLoc->link;
-		//­n±N²Ä¤G­Ó¸`ÂI³]¬° head(²Ä¤@­Ó¸`ÂI) 
+		//è¦å°‡ç¬¬äºŒå€‹ç¯€é»è¨­ç‚º head(ç¬¬ä¸€å€‹ç¯€é») 
 	}
 	else
 	{
 		pPre->link = pLoc->link;
-		//«e¤@­Ó¸`ÂI±µ¨ì¤U¤@­Ó¦ì¸m 
+		//å‰ä¸€å€‹ç¯€é»æ¥åˆ°ä¸‹ä¸€å€‹ä½ç½® 
 	}
 	
 	
-	if(pLoc->link == NULL)	//¦pªG­n§R°£ªº¸`ÂI¬O³Ì«á¤@­Ó¸`ÂI 
+	if(pLoc->link == NULL)	//å¦‚æœè¦åˆªé™¤çš„ç¯€é»æ˜¯æœ€å¾Œä¸€å€‹ç¯€é» 
 	{
 		list->rear = pPre;
-		//­n±N«e¤@­Ó¸`ÂI³]©w¬° rear(³Ì«á¤@­Ó¸`ÂI)
+		//è¦å°‡å‰ä¸€å€‹ç¯€é»è¨­å®šç‚º rear(æœ€å¾Œä¸€å€‹ç¯€é»)
 	} 
 	
 	free(pLoc);
-	list->count--;	//¸`ÂIÁ`¼Æ¶q´î¤Ö 
+	list->count--;	//ç¯€é»ç¸½æ•¸é‡æ¸›å°‘ 
     
 }
 
